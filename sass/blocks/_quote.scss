@@ -1,0 +1,17 @@
+.wp-block-quote {
+	border-left: 0;
+	margin-bottom: $space-6;
+	position: relative;
+	
+	p {
+		margin-bottom: .5em;
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+	
+	cite {
+		font-family: $font__main;
+		font-weight: 700;
+	}
+
+}

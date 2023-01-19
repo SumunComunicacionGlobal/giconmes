@@ -1,0 +1,78 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+select,
+textarea {
+	color: color(body-main);
+	border-radius: $border__radius;
+	padding: $space-05;
+	width: 100%;
+	line-height: 1;
+	min-height: 48px;
+	background-color: white;
+	border: solid 1px color(body-medium);
+
+	.has-body-white-color & {
+		color: white;
+	}
+
+	&:focus {
+		border: solid 1px color(primary);
+	}
+
+	&.error {
+		border: 1px solid color(color-error);
+	}
+}
+
+span.error {
+	color: color(color-error);
+}
+
+input[type="submit"] {
+	font-size: 100%;
+	background-color: color(primary);
+	color: white;
+	&:hover {
+		background-color: color(secondary);
+	}
+}
+
+form .newsletter-form {
+    display: flex;
+
+	input[type="submit"] {
+		margin-left: -32px;
+		margin-top: 24px;
+		border-radius: 0 $border__radius $border__radius 0;
+	}
+}
+
+
+form.search-form {
+    display: flex;
+
+	.search-field {
+		border-radius: $border__radius 0 0 $border__radius;
+		height: 48px;
+	}
+	.search-submit {
+		margin-left: -32px;
+	}
+}
+
+
+
+
