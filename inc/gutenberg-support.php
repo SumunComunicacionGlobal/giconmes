@@ -92,11 +92,22 @@ function tabs_acf_init() {
 add_action('acf/init', 'tabs_acf_init');
 
 
-
-
 function acf_block_callback($block) {
 	$slug = str_replace('acf/', '', $block['name']);
 	if( file_exists(STYLESHEETPATH . "/template-parts/blocks/{$slug}.php") ) {
 		include( STYLESHEETPATH . "/template-parts/blocks/{$slug}.php" );
 	}
+}
+
+
+
+add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
+function header_cover_breadcrumb( $block_content, $block ) {
+    if ( $block['blockName'] === 'core/cover' && isset( $block['attrs']['className'] ) && str_contains( $block['attrs']['className'], 'is-style-hero-cover' ) ) {
+        ob_start();
+        rank_math_the_breadcrumbs();
+        $block_content .= ob_get_clean(); 
+    }
+
+    return $block_content;
 }

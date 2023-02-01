@@ -2,10 +2,14 @@ a {
 	color: color(body-link);
 	text-decoration: none;
 
+	p & {
+		text-decoration: underline;
+	}
+
 	&:hover,
 	&:focus,
 	&:active {
-		color: color(body-link)-hover;
+		color: color(body-link--hover);
 	}
 	&:focus {
 		outline: none;

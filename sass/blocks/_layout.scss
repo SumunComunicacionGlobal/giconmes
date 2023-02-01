@@ -6,25 +6,17 @@
 		@include container;
 	}
 
-	& > [class*="wp-block-"]:not(.alignfull).alignwide {
-		margin-right: $grid__gap;
-		margin-left: $grid__gap;
+	& [class*="wp-block-"]:not(.alignfull).alignwide {
+		margin-right: $space-6;
+		margin-left: $space-6;
 	}
 
-	.alignfull > .wp-block-group__inner-container, .alignfull > .wp-block-cover__inner-container {	
+	& [class*="wp-container-"]:not(.alignfull):not(.alignwide) {
 		@include container;
 	}
 
-	.is-style-move-up {
-		margin-top: -64px;
-		margin-bottom: 0;
-		position: relative;
-		z-index: 1;
-
-		@include breakpoint(mobile) {
-			margin-top: 0;
-			margin-bottom: initial;
-		}
+	.alignfull > .wp-block-group__inner-container, .alignfull > .wp-block-cover__inner-container {	
+		//@include container;
 	}
 
 	.is-style-no-gap  {
@@ -55,65 +47,5 @@
 
 :where(.wp-block-group.has-background) {
 	padding: $space-4 0;
-}
-
-#CTA {
-	margin-bottom: 0;
-
-	.wp-block-column {
-		display: flex;
-		height: 100%;
-		justify-content: center;
-		&:nth-child(2) {
-			margin-top: 80px;
-
-			@include breakpoint(mobile) {
-				margin-top: 0;
-			}
-		}
-	}
-
-	.wp-block-group {
-		max-width: 504px;
-		padding: $space-4 0;
-	}
-
-	.delivery-btns .wp-block-button__link {
-		padding: .610rem $space-3;
-
-	}
-}
-
-#CTA-newsletter {
-	position: relative;
-
-	.home & {
-
-		padding: $space-8 0 $space-4 0;
-		
-		&:after {
-			height: 4rem;
-			bottom: -4rem;
-			top: auto;
-		}
-
-	}
-
-	&:after {
-		content: "";
-		width: 50%;
-		height: 88px;
-		top: -88px;
-		background-color: color(secondary-yellow);
-		position: absolute;
-
-		@include breakpoint(mobile) {
-			height: 48px;
-		top: -48px;
-		}
-	}
-	
-
-
 }
 

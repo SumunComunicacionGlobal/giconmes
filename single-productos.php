@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all products pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -9,8 +9,9 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main">
+    <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+	
+    <main id="primary" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
@@ -36,5 +37,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-//get_sidebar();
 get_footer();

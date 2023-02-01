@@ -16,6 +16,17 @@ wp.domReady( () => {
 			label: 'Lista Números',
 		},
 	] );
+	wp.blocks.registerBlockStyle( 'core/cover', [
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		},
+		{
+			name: 'hero-cover',
+			label: 'Hero Cover page',
+		},
+	] );
 	wp.blocks.registerBlockStyle( 'core/columns', [
 		{
 			name: 'default',

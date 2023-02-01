@@ -26,7 +26,7 @@
 	}
 
 	&:after {
-		content: '→';
+		content: url('./assets/icons/arrow-right.svg');
 		padding-left: $space-05;
 		transition: padding-left 0.3s ease;
 	}

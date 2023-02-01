@@ -1,0 +1,59 @@
+.site-footer {
+    background-color: color(bg-20);
+    border-bottom: 8px solid color(primary-40);
+    margin-top: 48px;
+
+    @include breakpoint(mobile) {
+        .has-text-align-right {
+            text-align: left;
+        }
+    }
+}
+
+.footer-contact {
+    background-color: color(primary);
+    max-width: 50%;
+    height: $space-9;
+    margin-top: -48px;
+    translate: 100%;
+
+    @include breakpoint(mobile) {
+        max-width: 100%;
+        translate: 0;
+        margin-bottom: $space-3;
+    }
+
+    .row {
+        height: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    a {
+        color: color(body-white);
+        &:hover {
+            color: color(primary-100);
+        }
+    }
+}
+
+#menu-footer {
+    display: flex;
+    flex-flow: column wrap;
+    height: 7.5rem;
+    font-size: 0.875rem;
+    @include breakpoint(mobile) {
+        height: auto;
+    }
+    
+
+    li a {
+        transition: all 0.3s ease;
+		&:hover {
+			color: color(body-link);
+			translate: $space-05;
+		}
+    }
+		
+}
+

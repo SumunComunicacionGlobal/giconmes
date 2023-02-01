@@ -26,9 +26,9 @@ $accent-colors: (
 $text-colors: (
     body-main: #161619,
     body-medium: #53545B,
-    body-link: #1927A7,
-    body-link--hover: #2134DF,
-    body-white: white,
+    body-link: #2134DF,
+    body-link--hover: #0B1354,
+    body-white: #FFFFFF,
 );
 
 $background-colors: (
@@ -54,8 +54,8 @@ $feedback-colors: (
     @return $collection;
 }
 
-$allColors: map-collect($primary-colors, $secondary-colors, $accent-colors, $text-colors, $feedback-colors); 
-$gutenbergColors: map-collect($primary-colors, $secondary-colors, $accent-colors, $text-colors); 
+$allColors: map-collect($primary-colors, $secondary-colors, $accent-colors, $text-colors, $background-colors, $feedback-colors); 
+$gutenbergColors: map-collect($primary-colors, $secondary-colors, $accent-colors, $background-colors, $text-colors); 
 
 // Get a value from map. How to use: .className { color: color(primary) } 
 @function color($key) {
@@ -66,12 +66,12 @@ $gutenbergColors: map-collect($primary-colors, $secondary-colors, $accent-colors
 $border__radius: 24px;
 
 /* Fonts */
-$font__main: 'n27regular', sans-serif;
-$font__heading: 'n27', sans-serif;
+$font__main: 'n27', sans-serif;
+$font__heading: 'n27regular', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
-$font__line-height-header: 1.2;
+$font__line-height-header: 1;
 $font__line-height-pre: 1.6;
 
 

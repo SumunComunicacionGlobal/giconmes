@@ -34,7 +34,9 @@ input[type="submit"] {
 	}
 }
 
-.btn--accent {
-	background-color: color(accent-magenta);
-	color: white;
+
+.button__arrow {
+	display: flex;
+	justify-items: center;
+	gap: $space-1;
 }

@@ -50,6 +50,7 @@ function giconmes_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'giconmes' ),
+			'menu-footer' => esc_html__( 'Footer', 'giconmes' ),
 		)
 	);
 
@@ -114,40 +115,38 @@ function giconmes_content_width() {
 }
 add_action( 'after_setup_theme', 'giconmes_content_width', 0 );
 
+
+/**
+ * Halt the main query in the case of an empty search 
+ */
+add_filter( 'posts_search', function( $search, \WP_Query $q )
+{
+    if( ! is_admin() && empty( $search ) && $q->is_search() && $q->is_main_query() )
+        $search .=" AND 0=1 ";
+
+    return $search;
+}, 10, 2 );
+
+
 /**
  * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function giconmes_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'giconmes' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'giconmes' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'giconmes_widgets_init' );
+require get_template_directory() . '/inc/widgets-areas.php';
 
 /**
  * Enqueue scripts and styles.
  */
-function giconmes_scripts() {
-	wp_enqueue_style( 'giconmes-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'giconmes-style', 'rtl', 'replace' );
+require get_template_directory() . '/inc/enqueue-scripts.php';
 
-	wp_enqueue_script( 'giconmes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+/**
+ * Gutenberg Support.
+ */
+require get_template_directory() . '/inc/gutenberg-support.php';
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'giconmes_scripts' );
+/**
+ * Custom Post Types
+ */
+require get_template_directory() . '/inc/cpt.php';
 
 /**
  * Implement the Custom Header feature.
@@ -169,10 +168,5 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+
 

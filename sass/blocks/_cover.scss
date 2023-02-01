@@ -1,60 +1,24 @@
-.is-style-cover-with-link {
-
-    transition: 0.4s;
-
-    .wp-block-cover__inner-container {
-        padding-bottom: 0;
-        transition: 0.4s;
-    }
+.wp-block-cover.alignfull.is-style-hero-cover {
+    padding: $space-8 0;
 
     &::before {
-        content: url(assets/icons/more.svg);
-        display: inline-block;
-        height: $space-3;
-        transition: 0.4s all ease;
+        content: '';
         position: absolute;
-        left: 0;
-        bottom: $space-1;
-        opacity: 0;
+        height: 100%;
+        width: 1px;
+        background: color(body-white);
+        left: 50%;
+        top: 0;
+        z-index: 2;
         
+        @include breakpoint(mobile) {
+            height: 0;
+            width: 0;
+        }
     }
 
-    &:hover {
-        background: color(primary-100);
-        
-        img {
-            opacity: .3;
-            transition: 0.4s;
-        }
-
-        .wp-block-cover__inner-container {
-            padding-bottom: 5%;
-            transition: 0.4s;
-        }
-
-        &::before {
-            left: $space-2;
-            opacity: 1;
-            transition: 0.4s all ease;
-            cursor: pointer;
-        }
-        
+    span.wp-block-cover__background {
+        clip-path: polygon(100% 0, 100% 66%, 50% 66%, 50% 100%, 0 100%, 0 0);
     }
-
-    .has-white-color a {
-        color: white;
-
-        &::before {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-    }
-    
 }
+

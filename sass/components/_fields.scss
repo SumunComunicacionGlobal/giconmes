@@ -50,23 +50,12 @@ input[type="submit"] {
 	}
 }
 
-form .newsletter-form {
-    display: flex;
-
-	input[type="submit"] {
-		margin-left: -32px;
-		margin-top: 24px;
-		border-radius: 0 $border__radius $border__radius 0;
-	}
-}
-
 
 form.search-form {
     display: flex;
 
 	.search-field {
 		border-radius: $border__radius 0 0 $border__radius;
-		height: 48px;
 	}
 	.search-submit {
 		margin-left: -32px;

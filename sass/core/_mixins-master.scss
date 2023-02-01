@@ -63,17 +63,17 @@
 
 	// 1180px Tablet
 	@media only screen and (min-width: 73.75em) {
-		width: 65.5rem;
+		max-width: 65.5rem;
 	}
 	
 	// 1280px Laptop
 	@media only screen and (min-width: 80em) {
-		width: 74rem; // 1216px - 32px padding 
+		max-width: 74rem; // 1216px - 32px padding 
 	}
 
 	// 1440px Desktop
 	@media only screen and (min-width: 90em) {
-		width: 80rem;
+		max-width: 80rem;
 	}
 }
 

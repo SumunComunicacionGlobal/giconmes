@@ -13,8 +13,11 @@
  */
 
 get_header();
-?>
 
+//get_template_part( 'template-parts/hero', get_post_type() );
+
+?>
+	
 	<main id="primary" class="site-main">
 
 		<?php
@@ -34,5 +37,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

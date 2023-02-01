@@ -1,10 +1,26 @@
 ul, ol {
 	margin: $space-1;
 	padding: 0;
+
+	li {
+		padding-bottom: $space-1;
+	}
 }
 
 ul {
-	list-style: circle;
+	list-style: square;
+}
+
+ul.menu {
+	li a {
+		color: color(body-medium);
+		transition: all 0.3s ease;
+		&:hover {
+			color: color(body-link);
+			translate: $space-05;
+		}
+	}		
+
 }
 
 ol {
