@@ -1,7 +1,12 @@
 .wp-block-cover.alignfull.is-style-hero-cover {
-    padding: $space-8 0;
+    padding: $space-9 0 0;
+    margin-top: -256px;
+    @include breakpoint(xsmobile) {
+        margin-top: 0;
+    }
 
-    &::before {
+
+    &::after {
         content: '';
         position: absolute;
         height: 100%;
@@ -9,7 +14,7 @@
         background: color(body-white);
         left: 50%;
         top: 0;
-        z-index: 2;
+        z-index: 1;
         
         @include breakpoint(mobile) {
             height: 0;
@@ -17,8 +22,21 @@
         }
     }
 
-    span.wp-block-cover__background {
+    span.wp-block-cover__background, img.wp-block-cover__image-background, video.wp-block-cover__video-background {
         clip-path: polygon(100% 0, 100% 66%, 50% 66%, 50% 100%, 0 100%, 0 0);
+
+        @include breakpoint(xsmobile) {
+            clip-path: polygon(100% 0, 100% 80%, 50% 80%, 50% 100%, 0 100%, 0 0);
+
+        }
+    }
+
+    .wp-block-cover__inner-container {
+        z-index: 2;
+    }
+
+    figure {
+        margin-bottom: 0;
     }
 }
 

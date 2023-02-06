@@ -5,8 +5,9 @@
       url('assets/fonts/n27-bold-webfont.woff2') format('woff2'),
       url('assets/fonts/n27-bold-webfont.woff') format('woff');
     
-    font-weight: normal;
+    font-weight: 800;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -16,8 +17,9 @@
       url('assets/fonts/n27-bolditalic-webfont.woff2') format('woff2'),
       url('assets/fonts/n27-bolditalic-webfont.woff') format('woff');
     
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -27,8 +29,9 @@
       url('assets/fonts/n27-regular-webfont.woff2') format('woff2'),
       url('assets/fonts/n27-regular-webfont.woff') format('woff');
     
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -38,8 +41,9 @@
       url('assets/fonts/n27-regularitalic-webfont.woff2') format('woff2'),
       url('assets/fonts/n27-regularitalic-webfont.woff') format('woff');
     
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -49,8 +53,9 @@
       url('assets/fonts/n27-medium-webfont.woff2') format('woff2'),
       url('assets/fonts/n27-medium-webfont.woff') format('woff');
     
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -60,8 +65,9 @@
       url('assets/fonts/n27-mediumitalic-webfont.woff2') format('woff2'),
       url('assets/fonts/n27-mediumitalic-webfont.woff') format('woff');
     
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
 }
    
  
@@ -142,12 +148,15 @@ h1, h2, h3, h4, h5, h6,
 	clear: both;
 	margin-top: 0;
     line-height: $font__line-height-header;
-    font-family: $font__heading;  
+    font-family: $font__heading;
+    margin-bottom: $space-1;
 }
 
 
 h1, .text-h1  {
 	font-size: 4em;
+    font-weight: 400;
+    line-height: 1;
     
     @include breakpoint(mobile) {
 		font-size: 3em;
@@ -157,7 +166,7 @@ h1, .text-h1  {
 
 h2, .text-h2 {
     font-size: 3em;
-
+    font-weight: 400;
     @include breakpoint(mobile) {
 		font-size: 2.5em;
     }
@@ -176,6 +185,7 @@ h3, .text-h3 {
 
 h4, .text-h4 {
     font-size: 2em;
+    font-weight: 400;
     @include breakpoint(laptop) {
 		font-size: 1.75em;
 	}

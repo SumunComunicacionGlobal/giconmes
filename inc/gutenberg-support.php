@@ -1,3 +1,5 @@
+
+
 <?php
 
 /**
@@ -79,17 +81,34 @@ function tabs_acf_init() {
 	if(function_exists('acf_register_block')) {
 		acf_register_block(array(
 			'name' => 'tabs',
-			'title' => __('Product Tabs'),
-			'description' => __('Tabs de productos en la carta', 'blackbone'),
+			'title' => __('Tabs'),
+			'description' => __('Tabs', 'giconmes'),
 			'render_callback' => 'acf_block_callback',
 			'category' => 'theme',
 			'icon' => 'editor-help',
 			'mode' => 'auto',
-			'keywords' => array('tabs', 'blackbone'),
+			'keywords' => array('tabs', 'giconmes'),
 		));
 	}
 }
 add_action('acf/init', 'tabs_acf_init');
+
+// Add custom block Grid Pages
+function pages_grid_acf_init() {
+	if(function_exists('acf_register_block')) {
+		acf_register_block(array(
+			'name' => 'pages-grid',
+			'title' => __('Grid Páginas'),
+			'description' => __('Mostrar páginas en un grid', 'giconmes'),
+			'render_callback' => 'acf_block_callback',
+			'category' => 'design',
+			'icon' => 'grid-view',
+			'mode' => 'auto',
+			'keywords' => array('Grid', 'Páginas', 'giconmes'),
+		));
+	}
+}
+add_action('acf/init', 'pages_grid_acf_init');
 
 
 function acf_block_callback($block) {
@@ -100,14 +119,31 @@ function acf_block_callback($block) {
 }
 
 
-
 add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
 function header_cover_breadcrumb( $block_content, $block ) {
     if ( $block['blockName'] === 'core/cover' && isset( $block['attrs']['className'] ) && str_contains( $block['attrs']['className'], 'is-style-hero-cover' ) ) {
         ob_start();
+        echo '<div id="breadcrumbs" class="alignfull">';
         rank_math_the_breadcrumbs();
+        echo '</div>';
         $block_content .= ob_get_clean(); 
     }
 
     return $block_content;
 }
+
+add_filter( 'render_block', 'smn_change_content_list_title_tag', 10, 2 );
+function smn_change_content_list_title_tag( $block_content, $block ) {
+
+    if ( $block['blockName'] === 'core/post-title' ) {
+    
+        $block_content = str_replace( 
+            array( '<h2', '<h6'), 
+            '<p', 
+            $block_content 
+        );
+    
+    }
+
+    return $block_content;
+};

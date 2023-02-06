@@ -24,7 +24,7 @@ function sumun_gutenberg_scripts() {
 	wp_enqueue_script(
 		'be-editor', 
 		get_stylesheet_directory_uri() . '/assets/js/editor.js', 
-		array( 'wp-blocks', 'wp-dom' ), 
+		array( 'wp-blocks', 'wp-dom', 'wp-dom-ready', 'wp-edit-post' ), 
 		filemtime( get_stylesheet_directory() . '/assets/js/editor.js' ),
 		true
 	);

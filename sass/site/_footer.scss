@@ -8,6 +8,18 @@
             text-align: left;
         }
     }
+
+    .border--right {
+        border-right: 1px solid color(bg-40);
+    
+        &_start {
+            border-right: 1px solid color(bg-40);
+            &::before {
+                background-color: color(bg-40);
+            }
+        }
+    }
+    
 }
 
 .footer-contact {
@@ -34,6 +46,10 @@
         &:hover {
             color: color(primary-100);
         }
+    }
+
+    img {
+        filter: brightness(0) invert(1);
     }
 }
 

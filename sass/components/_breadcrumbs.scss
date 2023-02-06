@@ -1,0 +1,14 @@
+#breadcrumbs {
+    background: color(bg-20);
+    background: linear-gradient(90deg, color(bg-20) 0%, color(bg-20) 56.666%, rgba(255,255,255,1) 56.666%, rgba(255,255,255,1) 100%);
+    height: $space-9;
+    padding: 36px 0;
+
+    p {
+        margin-bottom: 0;
+    }
+    
+    nav {
+        @include container;
+    }
+}

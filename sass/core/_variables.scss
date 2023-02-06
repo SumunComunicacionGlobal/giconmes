@@ -63,15 +63,15 @@ $gutenbergColors: map-collect($primary-colors, $secondary-colors, $accent-colors
 }
 
 /* Border radius */
-$border__radius: 24px;
+$border__radius: 4px;
 
 /* Fonts */
 $font__main: 'n27', sans-serif;
-$font__heading: 'n27regular', sans-serif;
+$font__heading: 'n27', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
-$font__line-height-header: 1;
+$font__line-height-header: 1.2;
 $font__line-height-pre: 1.6;
 
 

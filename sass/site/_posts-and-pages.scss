@@ -2,33 +2,30 @@
 	padding-top: 240px;
 	
 	@include breakpoint(mobile) {
-		padding-top: $space-6;
-	}
-
-	.home & {
-		padding-top: $space-6;
-		@include breakpoint(mobile) {
-			padding-top: $space-3;
-		}
+		padding-top: $space-3;
 	}
 }
 
 .border--right {
-	border-right: 1px solid color(bg-40);
+	border-right: 1px solid color(body-white);
 
-	&_start {
-		border-right: 1px solid color(bg-40);
+	&_start {	
 		position: relative;
 		&::before{
 			content: '';
 			height: 40px;
 			width: 8px;
-			background-color: color(bg-40);
+			background-color: color(body-white);
 			position: absolute;
 			right: -8px;
 		}
 	}
 }
+
+.custom-block--grid-pages{
+	background: color(bg-20);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 12%, color(bg-20) 12%, color(bg-20) 100%);
+} 
 
 #moove_gdpr_cookie_info_bar {
 	min-height: 400px !important;

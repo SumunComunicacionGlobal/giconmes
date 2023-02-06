@@ -166,10 +166,10 @@
     &:after {
         content: '';
         position: absolute;
-        height: 100%;
         width: 1px;
         background: color(body-white);
         left: 50%;
+		top: 0;
     }
 }
 
