@@ -59,6 +59,30 @@ add_action('after_setup_theme', function ()
 
 }, 20);
 
+/**
+ * theme_custom_gradients.
+ *
+ * Add custom gradients to the Gutenberg editor.
+ *
+ */
+function theme_custom_gradients()
+{
+    add_theme_support('editor-gradient-presets', array(
+        array(
+            'name' => __('Up', 'giconmes'),
+            'gradient' => 'linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, #EEF2F6 40%, #EEF2F6 100%)',
+            'slug' => 'gradient-up'
+        ),
+        array(
+            'name' => __('Left', 'giconmes'),
+            'gradient' => 'linear-gradient(90deg, #EEF2F6 0%, #EEF2F6 75%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%)',
+            'slug' => 'gradient-left'
+        ),
+        
+    ));
+}
+add_action('after_setup_theme', 'theme_custom_gradients');
+
 // Disables custom colors in block color palette.
 add_theme_support( 'disable-custom-gradients' );
 
@@ -77,17 +101,34 @@ add_editor_style( 'style-editor.css' );
 
 
 // Add custom block Faqs ACF
-function tabs_acf_init() {
+function faqs_acf_init() {
 	if(function_exists('acf_register_block')) {
 		acf_register_block(array(
-			'name' => 'tabs',
-			'title' => __('Tabs'),
-			'description' => __('Tabs', 'giconmes'),
+			'name' => 'faqs',
+			'title' => __('Faqs'),
+			'description' => __('Preguntas frecuentes', 'giconmes'),
 			'render_callback' => 'acf_block_callback',
 			'category' => 'theme',
 			'icon' => 'editor-help',
 			'mode' => 'auto',
-			'keywords' => array('tabs', 'giconmes'),
+			'keywords' => array('faqs', 'giconmes'),
+		));
+	}
+}
+add_action('acf/init', 'faqs_acf_init');
+
+// Add custom block Tabs ACF
+function tabs_acf_init() {
+	if(function_exists('acf_register_block')) {
+		acf_register_block(array(
+			'name' => 'tabs',
+			'title' => __('Vertical Tabs'),
+			'description' => __('Vertical tabs responsive', 'giconmes'),
+			'render_callback' => 'acf_block_callback',
+			'category' => 'theme',
+			'icon' => 'list-view',
+			'mode' => 'auto',
+			'keywords' => array('Tabs', 'giconmes'),
 		));
 	}
 }
@@ -110,6 +151,23 @@ function pages_grid_acf_init() {
 }
 add_action('acf/init', 'pages_grid_acf_init');
 
+// Add custom block Card
+function card_acf_init() {
+	if(function_exists('acf_register_block')) {
+		acf_register_block(array(
+			'name' => 'card',
+			'title' => __('Card'),
+			'description' => __('Mostrar un card o ficha', 'giconmes'),
+			'render_callback' => 'acf_block_callback',
+			'category' => 'design',
+			'icon' => 'excerpt-view',
+			'mode' => 'auto',
+			'keywords' => array('Card', 'Ficha', 'giconmes'),
+		));
+	}
+}
+add_action('acf/init', 'card_acf_init');
+
 
 function acf_block_callback($block) {
 	$slug = str_replace('acf/', '', $block['name']);
@@ -119,7 +177,6 @@ function acf_block_callback($block) {
 }
 
 
-add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
 function header_cover_breadcrumb( $block_content, $block ) {
     if ( $block['blockName'] === 'core/cover' && isset( $block['attrs']['className'] ) && str_contains( $block['attrs']['className'], 'is-style-hero-cover' ) ) {
         ob_start();
@@ -131,14 +188,17 @@ function header_cover_breadcrumb( $block_content, $block ) {
 
     return $block_content;
 }
+add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
 
-add_filter( 'render_block', 'smn_change_content_list_title_tag', 10, 2 );
+
+
+
 function smn_change_content_list_title_tag( $block_content, $block ) {
 
     if ( $block['blockName'] === 'core/post-title' ) {
     
         $block_content = str_replace( 
-            array( '<h2', '<h6'), 
+            array( '<h4', '<h5'), 
             '<p', 
             $block_content 
         );
@@ -146,4 +206,8 @@ function smn_change_content_list_title_tag( $block_content, $block ) {
     }
 
     return $block_content;
-};
+}
+add_filter( 'render_block', 'smn_change_content_list_title_tag', 10, 2 );
+
+
+

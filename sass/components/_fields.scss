@@ -21,11 +21,11 @@ textarea {
 	width: 100%;
 	line-height: 1;
 	min-height: 48px;
-	background-color: white;
+	background-color: #FFF;
 	border: solid 1px color(body-medium);
 
 	.has-body-white-color & {
-		color: white;
+		color: #FFF;
 	}
 
 	&:focus {

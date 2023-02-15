@@ -1,6 +1,8 @@
-.faqs-block {
+.tabs-block {
+
+	position: relative;
 	
-	.faqs-btn {
+	.tabs-btn {
 		background-color: transparent;
 		cursor: pointer;
 		width: 100%;
@@ -15,8 +17,9 @@
 		margin: $space-05 0;
 		color: color(body-medium);
 		line-height: 1.2;
+		width: 50%;
 
-		.has-text-color & {
+        .has-text-color & {
 			color: inherit;
 
 			span {
@@ -52,9 +55,50 @@
 		}
 	}
 	
-	.faqs-content {
+	.tabs-content {
 		max-height: 0;
 		overflow: hidden;
 		transition: max-height 0.2s ease-out;
+		width: 50%;
+		position: absolute;
+		top: 0;
+		left: 55%;
+		right: 0;
 	}
 }
+
+
+/* Hide / Show tab's content  */
+
+.tab-content {
+	display: none;
+	width: 100%;
+	max-height: 100%;
+	background: #fff;
+  }
+  .tab.active + .tab-content { display: block; }
+  
+  /* Styling tabs - this is enough for mobile - just like an accordion */
+  
+  .tab, .tab-content { padding: 10px; } 
+  .tab { background: #ccc; }
+  .tab-content { background: #ddd; }
+  
+  /* Styling for desktop - vertical tabs */
+  
+  @media (min-width: 992px) {
+	.tab { width: 30% }
+	.tab-content {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  width: 70%;
+	  min-height: 100%;
+	  overflow-y: auto;
+	}
+  /*   this is optional */
+	.tabs-container { 
+	  min-height: 400px; 
+	  background: #ccc;
+	}
+  }

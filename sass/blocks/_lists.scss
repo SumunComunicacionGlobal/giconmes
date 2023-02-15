@@ -122,7 +122,7 @@ ul.is-style-numbers-list, ol.is-style-numbers-list {
 	}
 }
 
-ul.is-style-icons-list, .widget_nav_menu {
+ul.is-style-arrow-list {
 	list-style: none;
 	position: relative;
 	padding: 0;
@@ -130,19 +130,13 @@ ul.is-style-icons-list, .widget_nav_menu {
 
 	li {
 		display: flex;
-		align-items: center; 
+		align-items: start; 
 		padding-bottom: $space-2;
 	}
 	li:before{
 		display: inline-flex;
-		content: '';
-		background-image: url("assets/icons/chevron-right.svg");
-		background-size: 24px 24px;
-		background-repeat: no-repeat;
-		color: white;
-		width: $space-2;
-		height: $space-2;
-		margin-right: $space-05;
+		content: url("assets/icons/arrow-list.svg");
+		margin-right: $space-1;
 	}
 
 	a {

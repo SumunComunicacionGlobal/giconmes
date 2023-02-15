@@ -58,7 +58,7 @@
 	
 	// 768px Tablet
 	@media only screen and (min-width: 48em) {
-		//width: 46rem;
+		width: 100%;
 	}
 
 	// 1180px Tablet
@@ -85,7 +85,7 @@
 	line-height: 1;
 	font-weight: bold;
 	transition: all 0.3s ease;
-	border-radius: $border__radius;
+	border-radius: 99px;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
@@ -95,7 +95,7 @@
 
 
 // Loops to enumerate the classes for grid columns.
-@for $i from 2 through 9 {
+@for $i from 1 through 9 {
 
 	.grid-columns-#{$i} {
 		display: grid;

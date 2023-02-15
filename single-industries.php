@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all products pages
+ * The template for displaying all industries pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *

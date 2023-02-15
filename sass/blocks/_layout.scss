@@ -2,7 +2,7 @@
 
 .entry-content {
 
-	& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+	& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) {
 		@include container;
 	}
 
@@ -15,9 +15,20 @@
         }
 	}
 
-	& [class*="wp-container-"]:not(.alignfull):not(.alignwide) {
+	& .alignfull [class*="wp-container-"]:not(.alignfull):not(.alignwide), .alignwide [class*="wp-container-"]:not(.alignfull):not(.alignwide) {
 		@include container;
 	}
+
+	& .alignfull [class*="wp-container-"]:not(.alignfull).alignwide {
+		margin-right: $space-6;
+		margin-left: $space-6;
+		@include breakpoint(mobile) {
+			margin-right: $space-1;
+			margin-left: $space-1;
+		}
+	}
+
+
 
 	.is-style-no-gap  {
 		gap: 0;
@@ -25,14 +36,9 @@
 	
 }
 
-.move-up {
-	margin-top: -40px;
-	position: relative;
-	z-index: 2;
-}
-
 .wp-block-columns {
-	margin-bottom: $space-2;
+	margin-bottom: $space-3;
+
 	.wp-block-column.has-background {
 		padding: $space-4;	
 	}
@@ -41,20 +47,30 @@
 .wp-block-group {
 
 	.wp-block-columns {
-		margin-bottom: 0;
-	}
-
-	& [class*="wp-container-"]:not(.alignfull):not(.alignwide) {
-		padding-left: 0;
-		padding-right: 0;
+		margin-bottom: $space-3;
 	}
 }
 
 :where(.wp-block-group.has-background) {
-	padding: $space-4 0;
+	padding: $space-6 0;
+
+	&[class*="-gradient-background"] {
+		padding: 0 !important;
+	}
+}
+
+:where(.wp-block-columns.has-background) {
+    padding: $space-4 $space-3;
 }
 
 :where(.is-layout-flex) {
 	gap: $grid__gap;
 }
 
+
+.has-gradient-up-gradient-background {
+	background: color(gradient-up);
+}
+.has-gradient-left-gradient-background {
+	background: color(gradient-left);
+}

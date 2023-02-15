@@ -32,7 +32,13 @@
 	}
 }
 
-.title-has-image {
+.dnone-desktop {
+	@include breakpoint(desktop) {
+		display: none !important;
+	}
+}
+
+.is-style-title-has-image, .title-has-image {
 	display: inline-flex;
     gap: 1rem;
     align-items: center;

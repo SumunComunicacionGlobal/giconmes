@@ -30,3 +30,128 @@
         align-items: baseline;
     }
 }
+
+.card-horizontal {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: 33.33% 66.66%;
+    background-color: color(body-white);
+    
+    .card-title {
+        display: flex;
+        flex-direction: column;
+        padding: $space-2;
+
+        span {
+            margin-bottom: $space-05;
+        }
+
+        .card-icon {
+            align-self: flex-end;
+        }
+    }
+
+    .post-thumbnail {
+        display: block;
+        height: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            border-radius: $border__radius 0 0 $border__radius;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    .card-exceprt {
+        display: flex;
+        gap: $grid__gap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}
+
+.card-block {
+    padding: $space-9 $space-3 $space-3 $space-3;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: color(body-white);
+    min-height: 408px;
+    border-radius: $border__radius;
+
+    &::before {
+        content: '';
+        background-color: black;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.5;
+        z-index: 1;
+        border-radius: $border__radius;
+    }
+
+    .card-title {
+        z-index: 2;
+        a {
+            color: color(body-white);
+        }
+    }
+    .card-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: $border__radius;
+    }
+
+    .card-icon {
+        align-self: flex-end;
+        z-index: 2;
+    }
+
+    .card-exceprt {
+        z-index: 2;
+    }
+
+}
+
+.card, .card-horizontal, .card-block {
+    transition: all .3s;
+    position: relative;
+
+    a::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:hover {
+        transform: translate(0px, -8px);
+        transition: all .3s;
+
+        .card-icon {
+            padding-right: 0;
+        }
+    }
+
+    .card-icon {
+        padding-right: $space-1;
+        transition: all .3s;
+    }
+}

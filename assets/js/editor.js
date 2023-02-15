@@ -9,11 +9,15 @@ wp.domReady( () => {
 		},
 		{
 			name: 'separator-list',
-			label: 'Lista separador',
+			label: 'Separador e icono',
 		},
 		{
 			name: 'numbers-list',
-			label: 'Lista Números',
+			label: 'Números',
+		},
+		{
+			name: 'arrow-list',
+			label: 'Flecha simple',
 		},
 	] );
 	wp.blocks.registerBlockStyle( 'core/cover', [
@@ -50,6 +54,17 @@ wp.domReady( () => {
 		{
 			name: 'with-arrow',
 			label: 'Con Flecha',
+		},
+	] );
+	wp.blocks.registerBlockStyle( 'core/paragraph', [
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		},
+		{
+			name: 'title-has-image',
+			label: 'Imagen integrada',
 		},
 	] );
 } );

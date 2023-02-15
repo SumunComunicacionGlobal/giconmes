@@ -4,6 +4,10 @@
 	@include breakpoint(mobile) {
 		padding-top: $space-3;
 	}
+
+	.single-productos & {
+		//padding-top: 192px;
+	}
 }
 
 .border--right {
@@ -22,10 +26,12 @@
 	}
 }
 
-.custom-block--grid-pages{
+.background-for-loop {
 	background: color(bg-20);
-	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 12%, color(bg-20) 12%, color(bg-20) 100%);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, color(bg-20) 10%, color(bg-20) 100%);
 } 
+
+
 
 #moove_gdpr_cookie_info_bar {
 	min-height: 400px !important;

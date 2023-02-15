@@ -1,3 +1,9 @@
 #hero {
     background-color: color(bg-20);
+    display: flex;
+    align-items: center;
+    min-height: 784px;
+    @include breakpoint(mobile) {
+        min-height: 100%;
+    }
 }

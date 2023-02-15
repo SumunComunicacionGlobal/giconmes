@@ -11,31 +11,34 @@ global $post;
 $posts = get_field('pages_grid');
 $grid_columns = get_field('pages_grid_columns');
 
+// Create class attribute allowing for custom "className" and "align" values.
+$class_name = 'wp-container--grid-pages';
+if ( ! empty( $block['className'] ) ) {
+    $class_name .= ' ' . $block['className'];
+}
+if ( ! empty( $block['align'] ) ) {
+    $class_name .= ' align' . $block['align'];
+}
+
 if($posts) :
 
 ?>
-<div class="alignfull custom-block--grid-pages">
-	<div class="grid-columns-<?php echo $grid_columns; ?> container pb-6">
-		<?php foreach($posts as $post) : setup_postdata($post);?>
+<div class="<?php echo esc_attr( $class_name ); ?>">
+	<div class="grid-columns-<?php echo $grid_columns; ?>">
+		<?php
         
-        <div id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>  
+        foreach($posts as $post) : setup_postdata($post);
             
-            <div class="card-img">
-                <a href="<?php the_permalink(); ?>"><?php giconmes_post_thumbnail(); ?></a>
-            </div>
+            if( get_field('pages_grid_card_type') ){
+                get_template_part( 'template-parts/card-product-horizontal' );
+            }
+            else {
+                get_template_part( 'template-parts/card-product' );
+            }
         
-            <div class="card-title">
-                <h2 class="text-h5 mb-0"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-right.svg" width="32" height="24" alt="Flecha">
-            </div> 
-            <div class="card-exceprt">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rectangle-blue.svg" width="72" height="4">
-                <p><?php echo get_the_excerpt();?></p>
-            </div>
-            
-        </div>
-
-        <?php endforeach; wp_reset_postdata(); ?>
+        endforeach;
+        
+        wp_reset_postdata(); ?>
     </div>
 </div>
 <?php endif; ?>

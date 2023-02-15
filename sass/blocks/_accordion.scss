@@ -20,16 +20,16 @@
 
 		span {
 			background-color: color(body-main);
-  			-webkit-mask: url(assets/icons/more.svg) no-repeat center;
-  			mask: url(assets/icons/more.svg) no-repeat center;
+  			-webkit-mask: url("assets/icons/more.svg") no-repeat center;
+  			mask: url("assets/icons/more.svg") no-repeat center;
 			width: $space-2;
 			height: $space-2;
 		}
 	}
 
 	.active span {
-		-webkit-mask: url(assets/icons/less.svg) no-repeat center;
-  		mask: url(assets/icons/less.svg) no-repeat center;
+		-webkit-mask: url("assets/icons/less.svg") no-repeat center;
+  		mask: url("assets/icons/less.svg") no-repeat center;
 	}
 	
 	.accordion-content {
