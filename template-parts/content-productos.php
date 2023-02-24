@@ -13,7 +13,12 @@
 	<?php   
 		if ( $post->post_parent ) {
 			get_template_part( 'template-parts/hero', get_post_type() );
+
 		}
+		else {
+			//get_template_part( 'template-parts/filter-productos' );
+		}
+		
 	?>
 
 	<div class="entry-content">

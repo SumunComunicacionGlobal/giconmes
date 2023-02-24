@@ -23,7 +23,7 @@ function custom_post_products() {
             'public' => true,
             'show_in_rest' => true,
             'publicly_queryable' => true,
-            'exclude_from_search' => true,
+            'exclude_from_search' => false,
             'show_ui' => true,
             'query_var' => true,
             'menu_position' => 11, /* this is what order you want it to appear in on the left hand side menu */ 
@@ -67,7 +67,7 @@ function custom_post_industries() {
             'public' => true,
             'show_in_rest' => true,
             'publicly_queryable' => true,
-            'exclude_from_search' => true,
+            'exclude_from_search' => false,
             'show_ui' => true,
             'query_var' => true,
             'menu_position' => 12, /* this is what order you want it to appear in on the left hand side menu */ 
@@ -110,7 +110,7 @@ function custom_post_success_stories() {
             'public' => true,
             'show_in_rest' => true,
             'publicly_queryable' => true,
-            'exclude_from_search' => true,
+            'exclude_from_search' => false,
             'show_ui' => true,
             'query_var' => true,
             'menu_position' => 13, /* this is what order you want it to appear in on the left hand side menu */ 

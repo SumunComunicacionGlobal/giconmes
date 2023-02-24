@@ -1,9 +1,71 @@
+.wp-block-cover.alignfull.is-style-hero-cover, .is-style-hero-cover {
+    margin-top: -176px;
+    @include breakpoint(mobile) {
+        margin-top: 0;
+    }
+}
+
 #hero {
     background-color: color(bg-20);
     display: flex;
     align-items: center;
     min-height: 784px;
+    position: relative;
     @include breakpoint(mobile) {
         min-height: 100%;
+    }
+
+    &.hero-page {
+        min-height: 582px;
+    }
+}
+
+#filter-blog {
+
+    #filter-blog--container {
+        display: none;
+    }
+
+    .toogle-filter-blog {
+        padding: 0;
+        color: color(primary);
+        text-transform: uppercase;
+        background-color: color(secondary);
+
+        svg {
+            margin-right: $space-05;
+        }
+
+        &:hover {
+            color: color(secondary);
+            svg {
+                stroke: color(secondary) !important;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-2;
+        margin: 0;
+
+        a {
+            background-color: color(primary);
+            color: color(body-white);
+            padding: $space-05 $space-1;
+            border-radius: 999px;
+            @include font-size (0.8);
+
+            &:hover {
+                background-color: color(secondary);
+            }
+            
+        }
+    }
+
+    p {
+        margin: 0;
     }
 }

@@ -11,6 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php 
+		if (get_field( 'hero_page' )) :
+			get_template_part( 'template-parts/hero', get_post_type() );
+		endif;
+	?>
+
 	<div class="entry-content">
 		<?php
 		the_content();

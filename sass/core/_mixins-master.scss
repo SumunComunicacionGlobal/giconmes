@@ -55,10 +55,11 @@
   	margin-left: auto;
   	padding-right: $grid__gap;
   	padding-left: $grid__gap;
+	  width: 100%;
 	
 	// 768px Tablet
 	@media only screen and (min-width: 48em) {
-		width: 100%;
+		//max-width: 100%;
 	}
 
 	// 1180px Tablet

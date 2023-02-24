@@ -1,16 +1,16 @@
 .pagination {
-    display: flex;
-    justify-content: center;
-    margin: $space-6 0;
+    margin: $space-6 0 112px 0;
 
     .nav-links {
         display: flex;
+        @include container;
+        justify-content: center;
 
         a, span {
             background-color: color(primary);
             color: color(body-white);
             padding: $space-05;
-            border-radius: 100%;
+            border-radius: 999px;
             width: $space-4;
             height: $space-4;
             display: flex;
@@ -25,7 +25,7 @@
 
         .next.page-numbers, .prev.page-numbers {
             width: $space-9;
-            border-radius: $border__radius;
+            border-radius: 999px;
         }
 
         & span.current{
@@ -53,4 +53,8 @@
     padding: $space-6 0;
     border-top: 1px solid color(primary-20);
     border-bottom: 1px solid color(primary-20);
+
+    .nav-links {
+        @include container;
+    }
 }

@@ -1,23 +1,24 @@
-<section id="hero" class="is-style-hero-cover">
+<section id="hero" class="hero-page is-style-hero-cover">
     <div class="container">
         <div class="row middle-xs">
             <div class="col-xs-12 col-md-6 border--right_start">
-                <p class="text-h6 mb-2">
-                    <?php
-                        $parent_title = get_the_title($post->post_parent);
-                        echo $parent_title;
-                    ?>
-                </p>
-                <?php echo the_title( '<h1 class="pb-6">', '</h1>' );?>
-                <div class="row between-xs start-xs">
-                    <div class="col-xs-2 last-xs first-md pb-6">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-down.svg" width="40" height="56" alt="Flecha">
-                    </div>
-                    <p class="col-xs-12 col-sm-10"><?php echo get_the_excerpt (); ?></p>
-                </div>
+                <p class="text-h6 mb-2">GICONMES</p>
+
+                <?php
+                if (is_search ()) {
+                    /* translators: %s: search query. */
+                    echo '<h1 class="page-title pb-6">';
+                    printf( esc_html__( 'Resultados de búsqueda por: %s', 'giconmes' ), '<span>' . get_search_query() . '</span></h1>' );
+                }
+                else {
+                    the_archive_title( '<h1 class="page-title pb-6">', '</h1>' );
+                };
+                
+                echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/arrow-down.svg' );
+                ?>
             </div> 
             <div class="col-xs-12 col-md-5 col-md-offset-1">
-                <?php giconmes_post_thumbnail(); ?>
+                <?php the_archive_description( '<div class="archive-description">', '</div>' );?>
             </div>
         </div>
     </div>

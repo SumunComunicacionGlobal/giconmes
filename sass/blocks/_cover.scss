@@ -1,16 +1,12 @@
 .wp-block-cover.alignfull.is-style-hero-cover, .is-style-hero-cover {
     padding: $space-9 0 0;
-    margin-top: -176px;
-    @include breakpoint(xsmobile) {
-        margin-top: 0;
-    }
 
     &:has(.wp-block-image.alignwide) {
 
         img.wp-block-cover__image-background, video.wp-block-cover__video-background {
             clip-path: polygon(100% 0, 100% 75%, 50% 75%, 50% 100%, 0 100%, 0 0);
     
-            @include breakpoint(xsmobile) {
+            @include breakpoint(mobile) {
                 clip-path: polygon(100% 0, 100% 90%, 50% 90%, 50% 100%, 0 100%, 0 0);
     
             }
@@ -44,5 +40,9 @@
     figure {
         margin-bottom: 0;
     }
+
+    h1.wp-block-post-title:first-line{
+            color: color(primary);
+      }
 }
 

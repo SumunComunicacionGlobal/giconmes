@@ -3,7 +3,7 @@
 	width: 100%;
 	z-index: 99;
 	transition: all 0.3s ease;
-	@include breakpoint(mobile) {
+	@include breakpoint(tablet) {
         position: relative;
 	}
 
@@ -31,7 +31,7 @@
 			display: none;
 			background-color: color(bg-20);
 			
-			@include breakpoint(mobile) {
+			@include breakpoint(tablet) {
 				background-color: color(body-white);
 			}
 		}
@@ -152,7 +152,7 @@
     grid-template-columns: 20% 30% 50%;
     position: relative;
 	
-	@include breakpoint(mobile) {
+	@include breakpoint(tablet) {
         display: block;
 
 		.site-branding, .site-contact {
@@ -203,7 +203,7 @@
         font-size: 0.875rem;
         line-height: $space-2;
 
-		@include breakpoint(mobile) {
+		@include breakpoint(tablet) {
 			margin: $space-2;
 		}
 
@@ -220,7 +220,7 @@
             margin: 0;
             height: auto;
 
-			@include breakpoint(mobile) {
+			@include breakpoint(tablet) {
 				display: none;
 				box-shadow: none;
 				float: none;

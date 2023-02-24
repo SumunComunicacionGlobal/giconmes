@@ -191,8 +191,6 @@ function header_cover_breadcrumb( $block_content, $block ) {
 add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
 
 
-
-
 function smn_change_content_list_title_tag( $block_content, $block ) {
 
     if ( $block['blockName'] === 'core/post-title' ) {
@@ -209,5 +207,17 @@ function smn_change_content_list_title_tag( $block_content, $block ) {
 }
 add_filter( 'render_block', 'smn_change_content_list_title_tag', 10, 2 );
 
+
+function facet_add_argument_query_loop( $block_content, $block ) {
+
+    if ( $block['blockName'] === 'core/post-template' ) {
+    
+        $query_args['facetwp'] = true;
+    
+    }
+
+    return $block_content;
+}
+add_filter( 'render_block_data', 'facet_add_argument_query_loop', 10, 2 );
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* Storing user's device details in a variable*/
 const details = navigator.userAgent;
 
@@ -18,6 +19,15 @@ https://github.com/argenteum/accessible-nav-wp
 Licensed GPL v.2 (http://www.gnu.org/licenses/gpl-2.0.html)
 
 */
+
+( function( $ ) {
+	$( document ).ready( function() {
+		// Open Blog Hero filters
+		$( '.toggle-filter-blog' ).click( function() {
+			$( '#filter-blog--container' ).slideToggle( 300 );
+		} );
+	} );
+}( jQuery ) );
 
 ( function( $ ) {
 	const menuContainer = $( '#menu-container' );
@@ -174,6 +184,7 @@ Licensed GPL v.2 (http://www.gnu.org/licenses/gpl-2.0.html)
 				break;
 		}
 	} );
+
 // eslint-disable-next-line no-undef
 }( jQuery ) );
 

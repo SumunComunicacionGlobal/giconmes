@@ -41,10 +41,6 @@ wp.domReady( () => {
 			name: 'no-gap',
 			label: 'Sin márgenes',
 		},
-		{
-			name: 'move-up',
-			label: 'Mover hacia arriba',
-		},
 	] );
 	wp.blocks.registerBlockStyle( 'core/button', [
 		{

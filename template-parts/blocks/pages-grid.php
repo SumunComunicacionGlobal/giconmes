@@ -30,10 +30,10 @@ if($posts) :
         foreach($posts as $post) : setup_postdata($post);
             
             if( get_field('pages_grid_card_type') ){
-                get_template_part( 'template-parts/card-product-horizontal' );
+                get_template_part( 'template-parts/card-horizontal' );
             }
             else {
-                get_template_part( 'template-parts/card-product' );
+                get_template_part( 'template-parts/card' );
             }
         
         endforeach;

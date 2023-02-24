@@ -4,10 +4,6 @@
 	@include breakpoint(mobile) {
 		padding-top: $space-3;
 	}
-
-	.single-productos & {
-		//padding-top: 192px;
-	}
 }
 
 .border--right {
@@ -31,6 +27,28 @@
 	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, color(bg-20) 10%, color(bg-20) 100%);
 } 
 
+
+#filter-productos {
+	.wp-block-post-featured-image {
+		img {
+			height: 488px;
+    		object-fit: contain;
+		}
+	}
+
+	p.is-style-title-has-image.has-body-medium-color{
+		@include font-size(.85);
+		gap: .5rem;
+	}
+
+	.facetwp-slider-reset {
+		margin-top: $space-2;
+		display: block;
+		&.facetwp-hidden {
+			display: none;
+		}
+	}
+}
 
 
 #moove_gdpr_cookie_info_bar {

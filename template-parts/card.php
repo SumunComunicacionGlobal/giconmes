@@ -5,7 +5,7 @@
 
     <div class="card-title">
         <h2 class="text-h5 mb-0"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-card.svg" width="44" height="32" alt="Flecha">
+        <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/arrow-card.svg' ); ?>
     </div> 
     <div class="card-exceprt">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/rectangle-blue.svg" width="72" height="4">

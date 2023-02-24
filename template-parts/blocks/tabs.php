@@ -18,22 +18,43 @@ if( !empty($block['anchor']) ) {
 
 <?php if( have_rows('tabs') ): ?>
     <div id="<?php echo esc_attr($id); ?>" class="tabs-block mb-6">
+        <div>
         <?php while( have_rows('tabs') ): the_row(); ?>
-        <button class="tabs-btn">
-            <span>
-                <div class="screen-reader-text"><?php esc_html_e( 'Open', 'giconmes' ); ?></div>
-            </span>
-            <?php the_sub_field('tabs_title'); ?>
-        </button>
-
-        <div class="tabs-content active">
-            <div class="mt-1 mb-2"><?php the_sub_field('tabs_content'); ?></div>
-        </div>
-
+            <button class="tabs-btn">
+                <span>
+                    <div class="screen-reader-text"><?php esc_html_e( 'Open', 'giconmes' ); ?></div>
+                </span>
+                <?php the_sub_field('tabs_title'); ?>
+            </button>
         <?php endwhile; ?>
+        </div>
+        <div>
+            <?php $i = 0; while( have_rows('tabs') ): the_row(); $i++; ?>
+                <div class="tabs-content <?php if( $i ==1 ){ echo "active"; } ?>">
+                    <div class="mt-1 mb-2"><?php the_sub_field('tabs_content'); ?></div>
+                </div>
+            <?php endwhile; ?>
+        </div>
     </div>
 <?php endif; ?>
 
 <script>
+
+var tabs = document.querySelectorAll( "#<?php echo $id; ?> .tabs-btn");
+var tabContents = document.querySelectorAll( "#<?php echo $id; ?> .tabs-content");
+
+tabs.forEach ((tab, index) => {
+    tab.addEventListener('click', () => {
+        tabContents.forEach((content) => {
+            content.classList.remove('active');
+        });
+        tabs.forEach((tab) => {
+            tab.classList.remove ('active');
+        });
+        tabContents[index].classList.add('active');
+        tabs[index].classList.add('active');
+    });
+});
+
 
 </script>

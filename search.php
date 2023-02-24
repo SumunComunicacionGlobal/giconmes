@@ -12,19 +12,13 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) :
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'giconmes' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
+			get_template_part( 'template-parts/hero' );
+			
 			/* Start the Loop */
+			echo '<div class="container grid-columns-3 mt-9">';
+
 			while ( have_posts() ) :
 				the_post();
 
@@ -33,11 +27,12 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/loop' );
 
 			endwhile;
+			echo '</div>';
 
-			the_posts_navigation();
+			the_posts_pagination();
 
 		else :
 
@@ -49,5 +44,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

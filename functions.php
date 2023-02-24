@@ -116,6 +116,10 @@ function giconmes_content_width() {
 add_action( 'after_setup_theme', 'giconmes_content_width', 0 );
 
 
+// Add excerpt to pages
+add_post_type_support( 'page', 'excerpt' );
+
+
 /**
  * Halt the main query in the case of an empty search 
  */
@@ -168,3 +172,16 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
+
+function product_loop_facetWP_filter( $atts, $content = null ){
+	$tp_atts = shortcode_atts(array( 
+	   'order' =>  null,
+	), $atts);         
+	ob_start();  
+	get_template_part('template-parts/filter', 'productos');  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+ }
+ add_shortcode('productos-filtro', 'product_loop_facetWP_filter'); 
