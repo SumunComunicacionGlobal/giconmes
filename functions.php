@@ -83,6 +83,10 @@ function giconmes_setup() {
 		)
 	);
 
+	add_image_size( 'card', 590, 360, array( 'center', 'center' ) ); // Hard crop left top
+	add_image_size( 'card-horizontal', 200, 160, array( 'center', 'center' ) ); // Hard crop left top
+
+
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 

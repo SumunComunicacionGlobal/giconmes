@@ -12,14 +12,13 @@
         }
     }
 
-    .post-thumbnail {
-        display: block;
-        width: 100%;
+    .card-img {
 
         img {
             display: block;
             width: 100%;
-            border-radius: $border__radius $border__radius 0 0;
+            height: 360px;
+            object-fit: cover;
         }
     }
 
@@ -89,7 +88,7 @@
         }
     }
 
-    .post-thumbnail {
+    .card-img {
         display: block;
         height: 100%;
 

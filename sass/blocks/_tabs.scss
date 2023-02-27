@@ -8,6 +8,17 @@
 	@include breakpoint(mobile) {
 		display: block;
 	}
+
+	&.no-animation {
+
+		.tabs-content {
+			max-height: 100%;
+			
+			&.active {
+				animation: none;
+			}
+		}
+	}
 	
 	.tabs-btn {
 		background-color: transparent;
@@ -79,7 +90,6 @@
 				from {max-height: 0;}
 				to {max-height: 100%;}
 			}
-			//transition: all 0.2s ease-out;
 		}
 	}
 }

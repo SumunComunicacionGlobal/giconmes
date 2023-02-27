@@ -14,10 +14,14 @@ $id = 'tab--' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
+$class_name = 'tabs-block';
+if ( ! empty( $block['className'] ) ) {
+    $class_name .= ' ' . $block['className'];
+}
 ?>
 
 <?php if( have_rows('tabs') ): ?>
-    <div id="<?php echo esc_attr($id); ?>" class="tabs-block mb-6">
+    <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr( $class_name ); ?>  mb-6">
         <div>
         <?php while( have_rows('tabs') ): the_row(); ?>
             <button class="tabs-btn">

@@ -176,20 +176,23 @@ function acf_block_callback($block) {
 	}
 }
 
-
 function header_cover_breadcrumb( $block_content, $block ) {
     if ( $block['blockName'] === 'core/cover' && isset( $block['attrs']['className'] ) && str_contains( $block['attrs']['className'], 'is-style-hero-cover' ) ) {
-        ob_start();
-        echo '<div id="breadcrumbs" class="alignfull">';
-        rank_math_the_breadcrumbs();
-        echo '</div>';
-        $block_content .= ob_get_clean(); 
+        if ( is_front_page() ) {	
+        }
+        else {
+            ob_start();
+            echo '<div id="breadcrumbs" class="alignfull">';
+            rank_math_the_breadcrumbs();
+            echo '</div>';
+            $block_content .= ob_get_clean(); 
+        }
+        
     }
 
     return $block_content;
 }
 add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
-
 
 function smn_change_content_list_title_tag( $block_content, $block ) {
 

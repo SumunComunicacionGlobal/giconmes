@@ -1,6 +1,6 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>  
     <div class="card-img">
-        <?php giconmes_post_thumbnail(); ?>
+        <?php the_post_thumbnail('card'); ?>
     </div>
 
     <div class="card-title">
