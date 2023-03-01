@@ -37,7 +37,7 @@
 
         if ( $parent->have_posts() ) : 
         
-        echo '<div class="is-layout-flow wp-block-query container">';
+        echo '<div class="is-layout-flow wp-block-query">';
         echo '<ul class="is-layout-flow is-flex-container columns-2 productos wp-block-post-template">';
 
         while ( $parent->have_posts() ) : $parent->the_post(); 

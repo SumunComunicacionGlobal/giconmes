@@ -27,6 +27,14 @@
 	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, color(bg-20) 10%, color(bg-20) 100%);
 } 
 
+.background-for-intro {
+	background-image: url('./assets/img/bg-intro.png');
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	
+}
+
 
 #filter-productos {
 	.wp-block-post-featured-image {
@@ -48,6 +56,11 @@
 			display: none;
 		}
 	}
+}
+
+.sticky-box {
+	position: sticky;
+	top: $space-4;
 }
 
 

@@ -203,6 +203,9 @@ h6, .text-h6 {
     font-size: 1em;
     text-transform: uppercase;
     color: color(body-medium);
+    &.has-text-color {
+        color: inherit;
+    }
     
 }
 
