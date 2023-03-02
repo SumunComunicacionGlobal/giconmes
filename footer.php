@@ -15,10 +15,22 @@
 		<div class="footer-contact middle-xs">
 			<div class="row middle-xs">
 				<div class="col-xs-12 col-md-offset-2">
-					<a class="button__arrow" href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-right.svg" width="32" height="24" alt="Contactar"><strong>Contacta con nosotros</strong></a>
+				
+					<?php 
+						$menu_id = '2'; //the number must be the menu ID
+						$contact = get_field('footer_contact', 'term_' . $menu_id);
+						if( $contact ): 
+                            $link_url = $contact['url'];
+                            $link_title = $contact['title'];
+                            $link_target = $contact['target'] ? $contact['target'] : '_self';
+                            ?>
+                            <a class="button__arrow" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-right.svg" width="32" height="24"> <?php echo esc_html( $link_title ); ?></a>
+                        <?php endif;
+					?>
+					
 				</div>
 			</div>
-		</div>
+		</div><!-- .footer-contact -->
 		
 		<div class="site-info container">
 			<div class="row center-xs start-sm">

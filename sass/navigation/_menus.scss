@@ -50,7 +50,7 @@
 			}
 
 			.search-form, .search-field {
-				height: $space-3 !important;
+				//height: $space-3 !important;
 				min-height: $space-3 !important;
 				transition: all 0.3s ease;
 			}
@@ -105,6 +105,14 @@
 
 	.search-form {
 		justify-content: end;
+		@include breakpoint(mobile) {
+			justify-content: start;
+			
+			
+			input[type="submit"] {
+				display: none;
+			}
+		}
 	}
 
     .btns-group {
@@ -310,7 +318,11 @@
 	display: none;
 }
 
-@media screen and (min-width: 37.5em) {
+@include breakpoint(tablet) {
+	
+} 
+
+@media screen and (min-width: 1194px) {
 
 	.site-header-menu {
 		display: block;

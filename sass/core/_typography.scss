@@ -163,7 +163,7 @@ h1, .text-h1  {
     line-height: 1;
     
     @include breakpoint(mobile) {
-		font-size: 3em;
+		font-size: 2.8em;
     }
 }
 
@@ -202,11 +202,6 @@ h5, .text-h5 {
 h6, .text-h6 {
     font-size: 1em;
     text-transform: uppercase;
-    color: color(body-medium);
-    &.has-text-color {
-        color: inherit;
-    }
-    
 }
 
 .text-caption {

@@ -55,7 +55,10 @@ form.search-form {
     display: flex;
 
 	.search-field {
-		border-radius: $border__radius 0 0 $border__radius;
+		border-radius: 99px 0 0 99px;
+		@include breakpoint(mobile) {
+			border-radius: 99px;
+		}
 	}
 	.search-submit {
 		margin-left: -32px;
