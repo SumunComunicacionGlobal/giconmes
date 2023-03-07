@@ -105,10 +105,7 @@
 
 	.search-form {
 		justify-content: end;
-		@include breakpoint(mobile) {
-			justify-content: start;
-			
-			
+		@include breakpoint(tablet) {
 			input[type="submit"] {
 				display: none;
 			}
