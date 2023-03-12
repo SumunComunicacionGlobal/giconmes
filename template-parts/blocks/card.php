@@ -41,7 +41,7 @@ if ( get_field('card_block_custom') ){
         </div>
 
         <div class="card-icon">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-card.svg" width="56" height="40" alt="Flecha">
+            <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/arrow-card.svg' ); ?>
         </div>	
 
     </div>

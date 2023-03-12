@@ -168,6 +168,23 @@ function card_acf_init() {
 }
 add_action('acf/init', 'card_acf_init');
 
+// Add custom block Slider Image
+function slider_acf_init() {
+	if(function_exists('acf_register_block')) {
+		acf_register_block(array(
+			'name' => 'slider',
+			'title' => __('Slider'),
+			'description' => __('Añade un slider con imagen a tu entrada', 'giconmes'),
+			'render_callback' => 'acf_block_callback',
+			'category' => 'theme',
+			'icon' => 'slides',
+			'mode' => 'auto',
+			'keywords' => array('slider', 'slide', 'paginas', 'card', 'giconmes'),
+		));
+	}
+}
+add_action('acf/init', 'slider_acf_init');
+
 
 function acf_block_callback($block) {
 	$slug = str_replace('acf/', '', $block['name']);

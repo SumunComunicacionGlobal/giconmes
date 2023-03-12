@@ -74,10 +74,10 @@
 .pr-9 {padding-right: $space-9;} // 96px
 .pr-10 {padding-right: $space-10;} // 112px
 
-.pa-05 {padding: $space-05;} // 8px
-.pa-1 {padding: $space-1;} // 16px
-.pa-2 {padding: $space-2;} // 24px
-.pa-3 {padding: $space-3;} // 32px
+.pa-05 {padding: $space-05 !important;} // 8px
+.pa-1 {padding: $space-1 !important;} // 16px
+.pa-2 {padding: $space-2 !important;} // 24px
+.pa-3 {padding: $space-3 !important;} // 32px
 .pa-4 {padding: $space-4;} // 40px
 .pa-5 {padding: $space-5;} // 56px
 .pa-6 {padding: $space-6;} // 64px

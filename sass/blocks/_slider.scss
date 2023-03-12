@@ -31,7 +31,9 @@
   overflow:hidden;
   list-style:none;
   padding:0;
-  z-index:1
+  z-index:1;
+  position: relative;
+  padding-top: $space-6;
  }
  
  .swiper-wrapper {
@@ -80,10 +82,9 @@
  .swiper-button-next,
  .swiper-button-prev {
   position:absolute;
-  top:50%;
-  width:$space-5;
-  height:$space-5;
-  border-radius: $space-5;
+  top:0;
+  width: 96px;
+  height:$space-6;
   background-color: color(secondary);
   z-index:10;
   cursor:pointer;
@@ -119,9 +120,8 @@
  }
  .swiper-button-prev,
  .swiper-rtl .swiper-button-next {
-  left:-32px;
-  @include breakpoint(tablet) { left:0px; }
-  right:auto
+  left:auto;
+  right:97px;
  }
  .swiper-button-prev:after,
  .swiper-rtl .swiper-button-next:after {
@@ -129,7 +129,7 @@
  }
  .swiper-button-next,
  .swiper-rtl .swiper-button-prev {
-  right:-32px;
+  right:0;
   @include breakpoint(tablet) { right:0px; }
   left:auto
  }
