@@ -15,7 +15,7 @@
         <?php if( get_field('capacity_product') ): ?>
             <p class="is-style-title-has-image has-body-medium-color has-text-color">
                 <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/box.svg' ); ?>
-                <?php esc_html_e( 'Volumen', 'giconmes' ); ?>
+                <?php esc_html_e( 'Caldera', 'giconmes' ); ?>
                 <?php the_field ('capacity_product'); ?>
             </p>
         <?php endif; ?>

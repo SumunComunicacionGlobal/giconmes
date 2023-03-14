@@ -131,9 +131,8 @@ ul.is-style-arrow-list {
 	margin: 0;
 
 	li {
-		display: flex;
-		align-items: start; 
-		padding-bottom: $space-2;
+		position: relative; 
+		padding: 0 0 $space-2 $space-4;
 
 		img {
 			margin: 0 $space-1;
@@ -141,9 +140,10 @@ ul.is-style-arrow-list {
 	}
 
 	li:before{
-		display: inline-flex;
 		content: url("assets/icons/arrow-list.svg");
-		margin-right: $space-1;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	a {

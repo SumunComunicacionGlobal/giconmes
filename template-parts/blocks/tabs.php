@@ -60,5 +60,21 @@ tabs.forEach ((tab, index) => {
     });
 });
 
+var tabsNoAnimation = document.querySelectorAll( "#metodologia #<?php echo $id; ?> .tabs-btn");
+var tabNoAnimationContents = document.querySelectorAll( "#metodologia  #<?php echo $id; ?> .tabs-content");
+
+tabsNoAnimation.forEach ((tab, index) => {
+    tab.addEventListener('mouseover', () => {
+        tabNoAnimationContents.forEach((content) => {
+            content.classList.remove('active');
+        });
+        tabs.forEach((tab) => {
+            tab.classList.remove ('active');
+        });
+        tabNoAnimationContents[index].classList.add('active');
+        tabs[index].classList.add('active');
+    });
+});
+
 
 </script>

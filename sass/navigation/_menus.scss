@@ -27,6 +27,10 @@
 			}
 		}
 
+		#site-header, #menu-container {
+			height: 0;
+		}
+
 		#site-header-menu {
 			display: none;
 			background-color: color(bg-20);
