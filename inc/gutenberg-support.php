@@ -168,7 +168,7 @@ function card_acf_init() {
 }
 add_action('acf/init', 'card_acf_init');
 
-// Add custom block Slider Image
+// Add custom block Slider
 function slider_acf_init() {
 	if(function_exists('acf_register_block')) {
 		acf_register_block(array(
@@ -184,6 +184,23 @@ function slider_acf_init() {
 	}
 }
 add_action('acf/init', 'slider_acf_init');
+
+// Add custom block Slider Image
+function slider_img_acf_init() {
+	if(function_exists('acf_register_block')) {
+		acf_register_block(array(
+			'name' => 'slider-img',
+			'title' => __('Slider Imagen'),
+			'description' => __('Añade un slider con imagen a tu entrada', 'giconmes'),
+			'render_callback' => 'acf_block_callback',
+			'category' => 'theme',
+			'icon' => 'slides',
+			'mode' => 'auto',
+			'keywords' => array('slider', 'Imagen', 'Carrusel', 'giconmes'),
+		));
+	}
+}
+add_action('acf/init', 'slider_img_acf_init');
 
 
 function acf_block_callback($block) {
