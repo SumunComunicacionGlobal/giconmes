@@ -189,3 +189,15 @@ function product_loop_facetWP_filter( $atts, $content = null ){
 	return $ret;    
  }
  add_shortcode('productos-filtro', 'product_loop_facetWP_filter'); 
+
+ function product_loop( $atts, $content = null ){
+	$tp_atts = shortcode_atts(array( 
+	   'order' =>  null,
+	), $atts);         
+	ob_start();  
+	get_template_part('template-parts/loop', 'productos');  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+ }
+ add_shortcode('productos-loop', 'product_loop'); 

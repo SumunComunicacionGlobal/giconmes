@@ -58,6 +58,20 @@
 	}
 }
 
+
+#loop-productos {
+	.wp-block-post-featured-image {
+		img {
+			height: 320px;
+    		object-fit: contain;
+		}
+	}
+	p.title-has-image.has-body-medium-color{
+		@include font-size(.85);
+		gap: .5rem;
+	}
+}
+
 .sticky-box {
 	position: sticky;
 	top: 140px;

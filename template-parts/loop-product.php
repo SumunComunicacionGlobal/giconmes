@@ -13,7 +13,7 @@
     </div>
     <div class="is-layout-flex wp-block-group">
         <?php if( get_field('capacity_product') ): ?>
-            <p class="is-style-title-has-image has-body-medium-color has-text-color">
+            <p class="title-has-image has-body-medium-color has-text-color">
                 <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/box.svg' ); ?>
                 <?php esc_html_e( 'Caldera', 'giconmes' ); ?>
                 <?php the_field ('capacity_product'); ?>
@@ -21,7 +21,7 @@
         <?php endif; ?>
 
         <?php if( get_field('power_product') ): ?>
-            <p class="is-style-title-has-image has-body-medium-color has-text-color">
+            <p class="title-has-image has-body-medium-color has-text-color">
                 <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/zap.svg' ); ?>
                 <?php esc_html_e( 'Potencia', 'giconmes' ); ?>
                 <?php
@@ -46,7 +46,7 @@
         <?php endif; ?>
 
         <?php if( get_field('output_product') ): ?>
-            <p class="is-style-title-has-image has-body-medium-color has-text-color">
+            <p class="title-has-image has-body-medium-color has-text-color">
                 <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/air-vent.svg' ); ?>
                 <?php esc_html_e( 'Producción', 'giconmes' ); ?>
                 <?php

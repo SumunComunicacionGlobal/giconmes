@@ -26,7 +26,7 @@ get_header();
 
 			endif;
 
-			echo '<div class="container grid-columns-3 mt-3">';
+			echo '<div class="container grid-columns-3 mt-3 mb-10">';
 
 			/* Start the Loop */
 			while ( have_posts() ) :
