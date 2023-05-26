@@ -29,4 +29,4 @@
         endif; wp_reset_postdata();
     ?>
 
-<div>
+</div>

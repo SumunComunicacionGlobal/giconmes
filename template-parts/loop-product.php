@@ -26,21 +26,16 @@
                 <?php esc_html_e( 'Potencia', 'giconmes' ); ?>
                 <?php
                 
+                    $kWs = array();
+
                     while( have_rows('power_product') ) : the_row();
-                    $rows = count(get_field('power_product'));
-                    $kW = get_sub_field('kw_product');
 
-                    if(get_row_index() == '1' ):
-                        echo $kW;
-                    endif;
-
-                    if(get_row_index() == $rows ):
-                        echo '-';
-                        the_sub_field('kw_product');
-                        echo ' kW';
-                    endif;
+                        $kW = get_sub_field('kw_product');
+                        if ($kW) $kWs[] = $kW;
 
                     endwhile;
+
+                    if ( $kWs) echo implode(' - ', $kWs) . ' kW';
                 ?>
             </p>
         <?php endif; ?>
@@ -50,21 +45,16 @@
                 <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/icons/air-vent.svg' ); ?>
                 <?php esc_html_e( 'Producción', 'giconmes' ); ?>
                 <?php
+                    $kghs = array();
+                    
                     while( have_rows('output_product') ) : the_row();
-                    $rows = count(get_field('output_product'));
-                    $kW = get_sub_field('kgh_product');
 
-                    if(get_row_index() == '1' ):
-                        echo $kW;
-                    endif;
-
-                    if(get_row_index() == $rows ):
-                        echo '-';
-                        the_sub_field('kgh_product');
-                        echo ' kg/h';
-                    endif;
+                        $kgh = get_sub_field('kgh_product');
+                        if ($kgh) $kghs[] = $kgh;
 
                     endwhile;
+
+                    if ( $kghs) echo implode(' - ', $kghs) . ' kg/h';
                 ?>
             </p>
         <?php endif; ?>
