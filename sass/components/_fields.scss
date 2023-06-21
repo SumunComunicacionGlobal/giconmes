@@ -24,10 +24,6 @@ textarea {
 	background-color: #FFF;
 	border: solid 1px color(body-medium);
 
-	.has-body-white-color & {
-		color: #FFF;
-	}
-
 	&:focus {
 		border: solid 1px color(primary);
 	}

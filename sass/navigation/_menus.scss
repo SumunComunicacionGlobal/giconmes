@@ -18,6 +18,10 @@
 		.site-branding {
 			width: 112px;
 			translate: 0 -60px;
+			@include breakpoint(tablet) {
+				translate: none;
+				width: 100%;
+			}
 		}
 
 		.site-contact {
@@ -25,10 +29,19 @@
 			a {
 				font-size: 0.875rem;
 			}
+			@include breakpoint(tablet) {
+				translate: none;
+				a {
+					font-size: inherit;
+				}
+			}
 		}
 
 		#site-header, #menu-container {
 			height: 0;
+			@include breakpoint(tablet) {
+				height: 100%;
+			}
 		}
 
 		#site-header-menu {
@@ -41,29 +54,30 @@
 		}
 
 		#topbar {
-			height: $space-4;
-			transition: all 0.3s ease;
-
-			button {
-				padding: 4px $space-4;
+			
 				height: $space-4;
-			}
-
-			.site-description {
-				font-size: 0;
-			}
-
-			.search-form, .search-field {
-				//height: $space-3 !important;
-				min-height: $space-3 !important;
 				transition: all 0.3s ease;
-			}
-			.search-submit {
-				padding: 0 $space-4;
-				transition: all 0.3s ease;
-			}
+
+				button {
+					padding: 4px $space-4;
+					height: $space-4;
+				}
+
+				.site-description {
+					font-size: 0;
+				}
+
+				.search-form, .search-field {
+					//height: $space-3 !important;
+					min-height: $space-3 !important;
+					transition: all 0.3s ease;
+				}
+				.search-submit {
+					padding: 0 $space-4;
+					transition: all 0.3s ease;
+				}
+			
 		}
-		
 	}
 }
 

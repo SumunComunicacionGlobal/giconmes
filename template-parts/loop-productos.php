@@ -1,4 +1,4 @@
-<div id="#loop-productos">
+<div id="loop-productos">
     <?php  
         $args = array(
             'post_type'      => 'productos',

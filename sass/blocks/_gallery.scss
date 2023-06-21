@@ -52,4 +52,6 @@
 	text-align: center;
 }
 
-
+.wp-block-gallery.has-nested-images:not(.is-cropped) figure.wp-block-image:not(#individual-image) {
+    margin-bottom: inherit;
+}

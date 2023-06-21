@@ -35,7 +35,10 @@
 
                     endwhile;
 
-                    if ( $kWs) echo implode(' - ', $kWs) . ' kW';
+					if ( $kWs) {
+                        $kWs = array( $kWs[0], $kWs[ count($kWs) - 1 ]);
+                        echo implode(' - ', $kWs) . ' kW';
+                    }
                 ?>
             </p>
         <?php endif; ?>
@@ -46,7 +49,7 @@
                 <?php esc_html_e( 'Producción', 'giconmes' ); ?>
                 <?php
                     $kghs = array();
-                    
+
                     while( have_rows('output_product') ) : the_row();
 
                         $kgh = get_sub_field('kgh_product');
@@ -54,7 +57,10 @@
 
                     endwhile;
 
-                    if ( $kghs) echo implode(' - ', $kghs) . ' kg/h';
+                    if ( $kghs) {
+                        $kghs = array( $kghs[0], $kghs[ count($kghs) - 1 ]);
+                        echo implode(' - ', $kghs) . ' kg/h';
+                    }
                 ?>
             </p>
         <?php endif; ?>
