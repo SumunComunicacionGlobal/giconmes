@@ -17,7 +17,7 @@
 				<div class="col-xs-12 col-md-offset-2">
 				
 					<?php 
-						$menu_id = '2'; //the number must be the menu ID
+						$menu_id = apply_filters( 'wpml_object_id', 2, 'nav_menu', true ); //the number must be the menu ID
 						$contact = get_field('footer_contact', 'term_' . $menu_id);
 						if( $contact ): 
                             $link_url = $contact['url'];
