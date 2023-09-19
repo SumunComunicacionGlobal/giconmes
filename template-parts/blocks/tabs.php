@@ -44,35 +44,38 @@ if ( ! empty( $block['className'] ) ) {
 
 <script>
 
-var tabs = document.querySelectorAll( "#<?php echo $id; ?> .tabs-btn");
-var tabContents = document.querySelectorAll( "#<?php echo $id; ?> .tabs-content");
+var tabs = Array.from(document.querySelectorAll( "#<?php echo $id; ?> .tabs-btn"));
+var tabContents = Array.from(document.querySelectorAll( "#<?php echo $id; ?> .tabs-content"));
+var tabsTemp = tabs;
 
 tabs.forEach ((tab, index) => {
     tab.addEventListener('click', () => {
-        tabContents.forEach((content) => {
+        tabContents.forEach(content => {
             content.classList.remove('active');
         });
-        tabs.forEach((tab) => {
-            tab.classList.remove ('active');
+        tabsTemp.forEach(tabTemp => {
+            tabTemp.classList.remove('active');
         });
+
         tabContents[index].classList.add('active');
-        tabs[index].classList.add('active');
+        tab.classList.add('active');
     });
 });
 
 var tabsNoAnimation = document.querySelectorAll( "#metodologia #<?php echo $id; ?> .tabs-btn");
 var tabNoAnimationContents = document.querySelectorAll( "#metodologia  #<?php echo $id; ?> .tabs-content");
+var tabsNoAnimationTemp = tabsNoAnimation;
 
 tabsNoAnimation.forEach ((tab, index) => {
     tab.addEventListener('mouseover', () => {
-        tabNoAnimationContents.forEach((content) => {
+        tabNoAnimationContents.forEach(content => {
             content.classList.remove('active');
         });
-        tabs.forEach((tab) => {
-            tab.classList.remove ('active');
+        tabsNoAnimationTemp.forEach(tabTemp => {
+            tabTemp.classList.remove ('active');
         });
         tabNoAnimationContents[index].classList.add('active');
-        tabs[index].classList.add('active');
+        tab.classList.add('active');
     });
 });
 
