@@ -36,6 +36,9 @@
 						<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>	
 					</div>
 					<div class="col-xs-7 col-sm-6">
+						<div class="language-selector">
+						<?php echo do_shortcode( '[wpml_language_switcher]' ); ?>
+						</div>
 						<div class="dflex btns-group">
 							<button class="btn-open-nav menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/align-right.svg" width="32" height="32" alt="<?php esc_html_e( 'Menu', 'giconmes' ); ?>">
