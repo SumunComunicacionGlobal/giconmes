@@ -9,6 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
+	$my_theme = wp_get_theme()->get('Version');
 	define( '_S_VERSION', '1.0.0' );
 }
 
