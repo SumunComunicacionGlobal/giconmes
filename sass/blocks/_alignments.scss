@@ -38,17 +38,18 @@
 	}
 }
 
-.is-style-title-has-image {
-	display: inline-flex;
-    gap: 1rem;
-    align-items: center;
+.is-style-title-has-image,
+.title-has-image {
 	width: 100%;
+	padding-left: 2.5rem;
+	position: relative;
 }
 
-.title-has-image {
-	display: inline-flex;
-    gap: 1rem;
-    align-items: center;
+.is-style-title-has-image > img:first-child,
+.title-has-image > img:first-child {
+	width: 1.5rem;
+	position: absolute;
+	left: 0;
 }
 
 p.wp-block-post-title {
